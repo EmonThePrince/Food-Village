@@ -10,6 +10,8 @@ import About from './components/About.jsx';
 import Contact from './components/Contact.jsx';
 import Login from './components/Login.jsx';
 import Signin from './components/Signin.jsx';
+import FoodItems from './components/FoodItems.jsx';
+import ItemDetails from './ItemDetails.jsx';
 
 
 
@@ -27,7 +29,14 @@ const router = createBrowserRouter([
       },
       {
         path:'catagory',
-        element:<Catagory />
+        loader:() => fetch('https://www.themealdb.com/api/json/v1/1/categories.php'),
+        element:<Catagory />,
+        children: [
+          {
+            path:":elements",
+            element:<FoodItems />
+          }
+        ]
       },
       {
         path:'about',
@@ -44,6 +53,11 @@ const router = createBrowserRouter([
       {
         path:'signin',
         element:<Signin />
+      },
+      {
+        path:'details/:id',
+        element:<ItemDetails />
+
       }
     ]
   }
