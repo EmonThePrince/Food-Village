@@ -87,7 +87,7 @@ function Header() {
             size="sm"
             className="hidden lg:inline-block"
           >
-            <NavLink to={'signin'}>Sign in</NavLink>
+            <NavLink to={'signin'}>Sign Up</NavLink>
           </Button>
         </div>
         <IconButton
@@ -136,7 +136,7 @@ function Header() {
               <NavLink to = 'login'>Log In</NavLink>
             </Button>
             <Button fullWidth variant="gradient" size="sm" className="">
-              <NavLink to={'signin'}>Sign in</NavLink>
+              <NavLink to={'signin'}>Sign Up</NavLink>
             </Button>
           </div>
         </div>
